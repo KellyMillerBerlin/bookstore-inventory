@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewActivity">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:text="@string/product_header"
+            android:textColor="@color/colorPrimary"
+            android:textAllCaps="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="3dp"
+            android:fontFamily="sans-serif"/>
+
+        <!-- Product name -->
+        <TextView
+            android:id="@+id/view_product_String"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:padding="10dp"/>
+
+        <!-- Quantity -->
+        <TextView
+            android:text="@string/quantity_header"
+            android:textColor="@color/colorPrimary"
+            android:textAllCaps="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="3dp"
+            android:fontFamily="sans-serif"/>
+
+        <TextView
+            android:id="@+id/view_quantity_String"
+            android:text="@string/placeholder_view_quantity"
+            android:textAlignment="center"
+            android:layout_marginLeft="10dp"
+            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:padding="5dp"  />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="4dp"
+                android:background="@color/colorAccent"
+                android:textColor="@android:color/black"
+                android:text="@string/button_increment"
+                android:onClick="incrementQuantity"/>
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="4dp"
+                android:background="@color/colorAccent"
+                android:textColor="@android:color/black"
+                android:text="@string/button_decrement"
+                android:onClick="decrementQuantity"/>
+
+        </LinearLayout>
+
+        <!-- Price -->
+        <TextView
+            android:text="@string/price_header"
+            android:textColor="@color/colorPrimary"
+            android:textAllCaps="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="3dp"
+            android:fontFamily="sans-serif"/>
+
+        <TextView
+            android:id="@+id/view_price_String"
+            android:layout_gravity="center_vertical"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:padding="5dp"  />
+
+        <!-- Supplier -->
+        <TextView
+            android:text="@string/supplier_header"
+            android:textColor="@color/colorPrimary"
+            android:textAllCaps="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="3dp"
+            android:fontFamily="sans-serif"/>
+
+        <TextView
+            android:id="@+id/view_supplier_String"
+            android:layout_gravity="center_vertical"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:padding="5dp"  />
+
+        <!-- Supplier contact -->
+        <TextView
+            android:text="@string/contact_header"
+            android:textColor="@color/colorPrimary"
+            android:textAllCaps="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="3dp"
+            android:fontFamily="sans-serif"/>
+
+        <TextView
+            android:id="@+id/view_contact_String"
+            android:layout_gravity="center_vertical"
+            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:padding="5dp" />
+
+        <Button
+            android:id="@+id/call_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="@string/button_call"
+            android:onClick="callSupplier"/>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/baseline_create_black_18dp"/>
+
+</RelativeLayout>

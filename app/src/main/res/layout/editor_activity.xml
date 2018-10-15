@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:context=".InputActivity">
+
+    <TextView
+        android:text="@string/product_header"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:fontFamily="sans-serif"/>
+
+    <!-- Product name -->
+    <EditText
+        android:id="@+id/edit_product"
+        android:hint="@string/title_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:padding="10dp"/>
+
+    <!-- Quantity -->
+    <TextView
+        android:text="@string/quantity_header"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/text_quantity"
+        android:text="@string/placeholder_list_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="4dp"
+            android:background="@color/colorAccent"
+            android:textColor="@android:color/black"
+            android:text="@string/button_increment"
+            android:onClick="incrementQuantity"/>
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="4dp"
+            android:background="@color/colorAccent"
+            android:textColor="@android:color/black"
+            android:text="@string/button_decrement"
+            android:onClick="decrementQuantity"/>
+
+    </LinearLayout>
+
+    <!-- Price -->
+    <TextView
+        android:text="@string/price_header"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:fontFamily="sans-serif"/>
+
+    <EditText
+        android:id="@+id/edit_price"
+        android:hint="@string/price_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:padding="10dp"/>
+
+    <TextView
+        android:text="@string/supplier_header"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:fontFamily="sans-serif"/>
+
+    <EditText
+        android:id="@+id/edit_supplier"
+        android:hint="@string/supplier_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:padding="10dp"/>
+
+    <TextView
+        android:text="@string/contact_header"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:fontFamily="sans-serif"/>
+
+    <EditText
+        android:id="@+id/edit_contact"
+        android:hint="@string/contact_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:padding="10dp"/>
+
+</LinearLayout>

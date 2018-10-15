@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name_catalog"
+            android:text="@string/placeholder_list_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:fontFamily="sans-serif-medium"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#2B3D4D"  />
+
+        <TextView
+            android:id="@+id/quantity_catalog"
+            android:text="@string/placeholder_list_quantity"
+            android:color="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:padding="3dp"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@android:color/darker_gray"  />
+
+        <TextView
+            android:id="@+id/price_catalog"
+            android:text="@string/placeholder_list_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:padding="3dp"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/colorPrimaryDark"  />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/button_sale"
+        android:textColor="@color/colorPrimary"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <Button
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/button_details"
+        android:textColor="@color/colorPrimary"
+        android:background="?android:attr/selectableItemBackground"/>
+
+</LinearLayout>
