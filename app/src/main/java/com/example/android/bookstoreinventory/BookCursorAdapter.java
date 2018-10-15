@@ -71,12 +71,15 @@ public class BookCursorAdapter extends CursorAdapter {
                     int newQuantity = quantity - 1;
 
                     // Getting the URI with the append of the ID for the row
-                    Uri quantityUri = ContentUris.withAppendedId(BooksContract.BooksEntry.CONTENT_URI, id);
+                    Uri quantityUri =
+                            ContentUris.withAppendedId(BooksContract.BooksEntry.CONTENT_URI, id);
                     // Update the value
                     ContentValues values = new ContentValues();
                     values.put(BooksContract.BooksEntry.COLUMN_QUANTITY, newQuantity);
-                    mContext.getContentResolver().update(quantityUri, values, null, null);
-                } else Toast.makeText(mContext, R.string.out_of_stock, Toast.LENGTH_LONG).show();
+                    mContext.getContentResolver().update(quantityUri, values, null,
+                            null);
+                } else Toast.makeText(mContext, R.string.out_of_stock,
+                        Toast.LENGTH_LONG).show();
             }
         });
 
@@ -88,7 +91,8 @@ public class BookCursorAdapter extends CursorAdapter {
                 // Create new intent to open the ViewActivity for the specific book
                 Intent intent = new Intent(mContext, ViewActivity.class);
                 // Getting the URI with the append of the ID for the row
-                Uri currentBookUri = ContentUris.withAppendedId(BooksContract.BooksEntry.CONTENT_URI, id);
+                Uri currentBookUri = ContentUris.withAppendedId
+                        (BooksContract.BooksEntry.CONTENT_URI, id);
                 intent.setData(currentBookUri);
                 mContext.startActivity(intent);
 

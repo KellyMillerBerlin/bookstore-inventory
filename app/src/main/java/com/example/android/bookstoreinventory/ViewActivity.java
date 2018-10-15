@@ -161,23 +161,23 @@ public class ViewActivity extends AppCompatActivity implements LoaderManager.Loa
         return super.onOptionsItemSelected(item);
     }
     /**
-     * Prompt the user to confirm that they want to delete this entry after menu selection.
+     * Prompt the user to confirm that they want to delete this entry after menu selection
      */
     private void showDeleteConfirmationDialog() {
         // Create an AlertDialog.Builder and set the message, and click listeners
-        // for the positive and negative buttons on the dialog.
+        // for the positive and negative buttons on the dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.delete_dialog_msg);
         builder.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                // User clicked the "Delete" button, so delete the book.
+                // User has clicked the "Delete" button, so delete the book
                 deleteEntry();
             }
         });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked the "Cancel" button, so dismiss the dialog
-                // and continue editing the book.
+                // and continue editing the book
                 if (dialog != null) {
                     dialog.dismiss();
                 }
@@ -217,15 +217,16 @@ public class ViewActivity extends AppCompatActivity implements LoaderManager.Loa
      */
     private void deleteEntry() {
 
-        int rowsDeleted = getContentResolver().delete(mCurrentBookUri, null, null);
+        int rowsDeleted = getContentResolver().delete(mCurrentBookUri, null,
+                null);
 
-        // Notify user if delete was successful.
+        // Notify user if delete was successful
         if (rowsDeleted == 0) {
-            // If no rows were deleted, then there was an error with the delete.
+            // If no rows were deleted, then there was an error with the delete
             Toast.makeText(this, getString(R.string.view_delete_failed),
                     Toast.LENGTH_SHORT).show();
         } else {
-            // Otherwise, the delete was successful and we can display a toast.
+            // Otherwise, the delete was successful, so display a toast
             Toast.makeText(this, getString(R.string.view_delete_successful),
                     Toast.LENGTH_SHORT).show();
         }
@@ -246,7 +247,7 @@ public class ViewActivity extends AppCompatActivity implements LoaderManager.Loa
             return;
         }
 
-        // Create a ContentValues object where column names are the keys and entries the values.
+        // Create a ContentValues object where column names are the keys and entries the values
         ContentValues values = new ContentValues();
         values.put(BooksEntry.COLUMN_PRODUCT, nameString);
         values.put(BooksEntry.COLUMN_QUANTITY, quantityString);
@@ -255,9 +256,10 @@ public class ViewActivity extends AppCompatActivity implements LoaderManager.Loa
         values.put(BooksEntry.COLUMN_PHONE, contactString);
 
         // Update fields for book
-        int rowsAffected = getContentResolver().update(mCurrentBookUri, values, null, null);
+        int rowsAffected = getContentResolver().update(mCurrentBookUri, values, null,
+                null);
 
-        // Notify user if update was successful.
+        // Notify user if update was successful
         if (rowsAffected == 0) {
             Toast.makeText(this, getString(R.string.edit_failed),
                     Toast.LENGTH_SHORT).show();
@@ -330,7 +332,6 @@ public class ViewActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onLoaderReset (Loader < Cursor > loader) {
-
     }
 
 }

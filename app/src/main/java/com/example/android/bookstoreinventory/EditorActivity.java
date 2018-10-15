@@ -145,7 +145,8 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu options from the res/menu/menu_catalog.xml file and add to input_activity view
+        // Inflate the menu options from the res/menu/menu_catalog.xml file and add to
+        // input_activity view
         getMenuInflater().inflate(R.menu.menu_input, menu);
         return true;
     }
@@ -168,7 +169,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                // User clicked "Discard" button, navigate to parent activity.
+                                // User has clicked "Discard" button, navigate to parent activity
                                 NavUtils.navigateUpFromSameTask(EditorActivity.this);
                             }
                         };
@@ -192,7 +193,8 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
         // Check if all fields are blank before sending data
         if (TextUtils.isEmpty(nameString) && TextUtils.isEmpty(priceString) &&
-                TextUtils.isEmpty(supplierString) && TextUtils.isEmpty(contactString) && mQuantityText.equals("0") ) {
+                TextUtils.isEmpty(supplierString) && TextUtils.isEmpty(contactString)
+                && mQuantityText.equals("0") ) {
             return;
         }
 
@@ -205,9 +207,11 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         values.put(BooksEntry.COLUMN_PHONE, contactString);
 
     // Update book if no null values.
-        if (!nameString.isEmpty() && !priceString.isEmpty() && !supplierString.isEmpty() && !contactString.isEmpty()) {
+        if (!nameString.isEmpty() && !priceString.isEmpty() && !supplierString.isEmpty()
+                && !contactString.isEmpty()) {
             // Update fields for book, returning rows affected
-            int rowsAffected = getContentResolver().update(mCurrentBookUri, values, null, null);
+            int rowsAffected = getContentResolver().update(mCurrentBookUri, values, null,
+                    null);
             // Notify user if update was successful.
             if (rowsAffected == 0) {
                 Toast.makeText(this, getString(R.string.edit_failed),
@@ -218,7 +222,8 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             }
             finish();
         } else {
-                Toast.makeText(this, getString(R.string.missing_values_editor), Toast.LENGTH_LONG).show();
+                Toast.makeText(this,
+                        getString(R.string.missing_values_editor), Toast.LENGTH_LONG).show();
             }
     }
 

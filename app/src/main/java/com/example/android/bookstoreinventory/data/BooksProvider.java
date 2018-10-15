@@ -35,7 +35,8 @@ public class BooksProvider extends ContentProvider {
         // URI for full table of objects
         sUriMatcher.addURI(BooksContract.CONTENT_AUTHORITY, BooksContract.PATH_BOOKS, BOOKS);
         // URI for individual object in table
-        sUriMatcher.addURI(BooksContract.CONTENT_AUTHORITY, BooksContract.PATH_BOOKS + "/#", BOOK_ID);
+        sUriMatcher.addURI(BooksContract.CONTENT_AUTHORITY, BooksContract.PATH_BOOKS + "/#",
+                BOOK_ID);
     }
 
     /** Database helper object */
@@ -59,13 +60,15 @@ public class BooksProvider extends ContentProvider {
         int match = sUriMatcher.match(uri);
         switch (match) {
             case BOOKS:
-                cursor = database.query(BooksContract.BooksEntry.TABLE_NAME, projection, selection, selectionArgs,
+                cursor = database.query(BooksContract.BooksEntry.TABLE_NAME, projection, selection,
+                        selectionArgs,
                         null, null, sortOrder);
                 break;
             case BOOK_ID:
                 selection = BooksContract.BooksEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
-                cursor = database.query(BooksContract.BooksEntry.TABLE_NAME, projection, selection, selectionArgs,
+                cursor = database.query(BooksContract.BooksEntry.TABLE_NAME, projection, selection,
+                        selectionArgs,
                         null, null, sortOrder);
                 break;
             default:
@@ -143,7 +146,8 @@ public class BooksProvider extends ContentProvider {
     /**
      * Update books with new values and return number of rows.
      */
-    private int updateBook(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
+    private int updateBook(Uri uri, ContentValues values, String selection, String[] selectionArgs)
+    {
 
         // If there are no values to update, then don't try to update the database
         if (values.size() == 0) {
@@ -154,9 +158,10 @@ public class BooksProvider extends ContentProvider {
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
 
         // Perform the update on the database and get the number of rows affected
-        int rowsUpdated = database.update(BooksContract.BooksEntry.TABLE_NAME, values, selection, selectionArgs);
+        int rowsUpdated = database.update(BooksContract.BooksEntry.TABLE_NAME, values, selection,
+                selectionArgs);
 
-        // Notfiy listeners of updated rows
+        // Notify listeners of updated rows
         if (rowsUpdated != 0) {
             getContext().getContentResolver().notifyChange(uri, null);
         }
@@ -180,13 +185,15 @@ public class BooksProvider extends ContentProvider {
         switch (match) {
             case BOOKS:
                 // Delete all rows that match the selection and selection args
-                rowsDeleted = database.delete(BooksContract.BooksEntry.TABLE_NAME, selection, selectionArgs);
+                rowsDeleted = database.delete(BooksContract.BooksEntry.TABLE_NAME, selection,
+                        selectionArgs);
                 break;
             case BOOK_ID:
                 // Delete a single row given by the ID in the URI
                 selection = BooksContract.BooksEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
-                rowsDeleted = database.delete(BooksContract.BooksEntry.TABLE_NAME, selection, selectionArgs);
+                rowsDeleted = database.delete(BooksContract.BooksEntry.TABLE_NAME, selection,
+                        selectionArgs);
                 break;
             default:
                 throw new IllegalArgumentException("Deletion is not supported for " + uri);

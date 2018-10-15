@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">BookstoreInventory</string>
+
+    <string name="app_name">Bookstore Inventory</string>
 
     <!-- Empty view strings -->
     <string name="empty_view_title_text">No books found.</string>
-    <string name="empty_view_subtext">Click on the button on the bottom right to begin adding books to inventory.</string>
+    <string name="empty_view_subtext">Click on the button on the bottom right to begin adding books
+        to inventory.</string>
 
     <!-- Button labels strings -->
     <string name="button_call">Call</string>
@@ -31,33 +33,11 @@
     <string name="quantity_header">Quantity</string>
     <string name="product_header">Product name</string>
 
-    <!-- Input Activity new book app bar label -->
-    <string name="editor_activity_title_new_book">New entry</string>
-    <!-- Input Activity edit book app bar label -->
-    <string name="editor_activity_title_edit_book">Make changes</string>
-
     <!-- Menu options -->
     <string name="action_save">Insert entry</string>
     <string name="action_save_quantity">Save new quantity</string>
     <string name="action_insert_dummy_data">Insert dummy data</string>
     <string name="action_delete_entry">Delete this item</string>
-
-    <!-- Spinner number options (1 through 15) -->
-    <string name="one">1</string>string>
-    <string name="two">1</string>string>
-    <string name="three">1</string>string>
-    <string name="four">1</string>string>
-    <string name="five">1</string>string>
-    <string name="six">1</string>string>
-    <string name="seven">1</string>string>
-    <string name="eight">1</string>string>
-    <string name="nine">1</string>string>
-    <string name="ten">1</string>string>
-    <string name="eleven">1</string>string>
-    <string name="twelve">1</string>string>
-    <string name="thirteen">1</string>string>
-    <string name="fourteen">1</string>string>
-    <string name="fifteen">1</string>string>
 
     <!-- Toast messages -->
     <string name="insert_failed">Could not add this entry to inventory.</string>
@@ -68,19 +48,21 @@
     <string name="view_delete_successful">Entry successfully deleted.</string>
     <string name="quantity_controls">You may only add up to 15 in quantity, beginning at 0.</string>
     <string name="no_number">No phone number has been provided.</string>
-    <string name="missing_values">You must provide a title, quantity between 1 and 15, price, supplier, and phone number.</string>
-    <string name="missing_values_editor">This entry must contain a title, price, supplier, and phone number.</string>
+    <string name="missing_values">You must provide a title, quantity between 1 and 15, price,
+        supplier, and phone number.</string>
+    <string name="missing_values_editor">This entry must contain a title, price, supplier, and
+        phone number.</string>
     <string name="out_of_stock">Out of stock, no sale is possible.</string>
 
     <!-- Dialogue messages and options -->
-    <string name="unsaved_changes_dialog_msg">You have unsaved changes. Are you sure you want to exit?</string>
+    <string name="unsaved_changes_dialog_msg">You have unsaved changes. Are you sure you want to
+        exit?</string>
     <string name="discard_changes">Discard my changes.</string>
-    <string name="discard_quantity">Discard changes made to quantity.</string>
-    <string name="save_quantity">Save new quantity.</string>
-    <string name="keep_making_changes">Keep making changes to this entry.</string>
+    <string name="discard_quantity">Discard changes to quantity</string>
+    <string name="save_quantity">Save new quantity</string>
+    <string name="keep_making_changes">Keep making changes</string>
     <string name="delete_dialog_msg">Are you sure you want to delete this entry?</string>
     <string name="delete">Yes.</string>
     <string name="cancel">No!</string>
-
 
 </resources>

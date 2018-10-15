@@ -15,20 +15,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
 import com.example.android.bookstoreinventory.data.BooksContract.BooksEntry;
 
 
-public class CatalogActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
+public class CatalogActivity extends AppCompatActivity implements
+        LoaderManager.LoaderCallbacks<Cursor>{
 
-    /** Identifier for the pet data loader */
+    /** Identifier for the book data loader */
     private static final int BOOKS_LOADER = 0;
 
     /** Adapter for the ListView */
     BookCursorAdapter mCursorAdapter;
-
-    // Quantity text view to be changed by Sale button
-    TextView mQuantityText;
 
     // Log tag
     private static final String LOG_TAG = CatalogActivity.class.getSimpleName();
@@ -51,11 +48,11 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         // Find the ListView which will be populated with the pet data
         ListView bookListView = (ListView) findViewById(R.id.list);
 
-        // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
+        // Find and set empty view on the ListView, so that it only shows when the list has 0 items
         View emptyView = findViewById(R.id.empty_view);
         bookListView.setEmptyView(emptyView);
 
-        // Set up an Adapter to create a list item for each row of book data in the Cursor.
+        // Set up an Adapter to create a list item for each row of book data in the Cursor
         mCursorAdapter = new BookCursorAdapter(this, null);
         bookListView.setAdapter(mCursorAdapter);
 
@@ -64,7 +61,6 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
 
     }
 
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -72,7 +68,8 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu options from the res/menu/menu_catalog.xml file and add to input_activity view
+        // Inflate the menu options from the res/menu/menu_catalog.xml file and add to
+        // input_activity view
         getMenuInflater().inflate(R.menu.menu_catalog, menu);
         return true;
     }

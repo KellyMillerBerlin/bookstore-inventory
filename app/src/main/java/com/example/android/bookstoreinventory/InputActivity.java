@@ -117,7 +117,8 @@ public class InputActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu options from the res/menu/menu_catalog.xml file and add to input_activity view
+        // Inflate the menu options from the res/menu/menu_catalog.xml file and add to
+        // input_activity view
         getMenuInflater().inflate(R.menu.menu_input, menu);
         return true;
     }
@@ -164,11 +165,12 @@ public class InputActivity extends AppCompatActivity {
 
         // Check if user has entered anything
         if (TextUtils.isEmpty(nameString) && TextUtils.isEmpty(priceString) &&
-                TextUtils.isEmpty(supplierString) && TextUtils.isEmpty(contactString) && quantityString.equals("0") ) {
+                TextUtils.isEmpty(supplierString) && TextUtils.isEmpty(contactString)
+                && quantityString.equals("0") ) {
             return;
         }
 
-        // Create a ContentValues object where column names are the keys and entries the values.
+        // Create a ContentValues object where column names are the keys and entries the values
         ContentValues values = new ContentValues();
         values.put(BooksEntry.COLUMN_PRODUCT, nameString);
         values.put(BooksEntry.COLUMN_QUANTITY, quantityString);
@@ -176,8 +178,9 @@ public class InputActivity extends AppCompatActivity {
         values.put(BooksEntry.COLUMN_SUPPLIER, supplierString);
         values.put(BooksEntry.COLUMN_PHONE, contactString);
 
-        // Insert new book, returning URI, as long as there are no null values.
-        if (!nameString.isEmpty() && !quantityString.equals("0") && !priceString.isEmpty() && !supplierString.isEmpty() && !contactString.isEmpty()) {
+        // Insert new book, returning URI, as long as there are no null values
+        if (!nameString.isEmpty() && !quantityString.equals("0") && !priceString.isEmpty()
+                && !supplierString.isEmpty() && !contactString.isEmpty()) {
             Uri newUri = getContentResolver().insert(BooksEntry.CONTENT_URI, values);
             // Insertion unsuccessful, notify user
             if (newUri == null) {
@@ -189,7 +192,9 @@ public class InputActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             finish();
         } else {
-            Toast.makeText(this, getString(R.string.missing_values), Toast.LENGTH_LONG).show();
+            Toast.makeText(this,
+                    getString(R.string.missing_values),
+                    Toast.LENGTH_LONG).show();
         }
     }
 
@@ -204,11 +209,11 @@ public class InputActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        // User clicked "Discard" button, close the current activity.
+                        // User has clicked "Discard" button, close the current activity
                         finish();
                     }
                 };
-        // Show dialog that there are unsaved changes
+        // Show dialog alerting user that there are unsaved changes
         showUnsavedChangesDialog(discardButtonClickListener);
     }
 
@@ -225,8 +230,8 @@ public class InputActivity extends AppCompatActivity {
         builder.setPositiveButton(R.string.discard_changes, discardButtonClickListener);
         builder.setNegativeButton(R.string.keep_making_changes, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                // User clicked the "Keep editing" button, so dismiss the dialog
-                // and continue editing the pet.
+                // User has clicked the "Keep editing" button, so dismiss the dialog
+                // and continue editing the book
                 if (dialog != null) {
                     dialog.dismiss();
                 }
